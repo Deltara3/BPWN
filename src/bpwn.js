@@ -19,7 +19,7 @@ function bpwn() {
     }
 
     if(!isBPWNCodeFound) {
-        console.log("BPWN code not found: Did you set the `type` attr of a <script> element to \"text/spwn\"?")
+        console.log("[WARN] BPWN code not found: Did you set the `type` attr of a <script> element to \"text/spwn\"?")
         alert("BPWN code not found, see console for more information.");
     } else {
         // continue with bpwn-ing
