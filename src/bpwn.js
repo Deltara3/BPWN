@@ -43,9 +43,9 @@ function intepret(code) {
                 console.error("no terminator found for %.alert call")
             }
 
-            if(useCode2) {
-                //
-            }
+            //if(useCode2) {
+            //    //
+            //}
         } else if (code.startsWith("%.log")) {
             if(code.endsWith(");") || code.endsWith(")")) {
                 eval("console." + code.substr(2))
