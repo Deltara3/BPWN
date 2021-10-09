@@ -16,15 +16,14 @@ function encodeObj(objinfo) {
     if(objinfoDecoded.X) {
         objEncoded = objEncoded + "2," + objinfoDecoded.X.toString() + ",";
     } else {
-        objEncoded = objEncoded + "2,0"
+        objEncoded = objEncoded + "2,0,"
     }
 
     if(objinfoDecoded.Y) {
         objEncoded = objEncoded + "3," + objinfoDecoded.Y.toString() + ",";
     } else {
-        objEncoded = objEncoded + "3,0"
+        objEncoded = objEncoded + "3,0,"
     }
-    console.log(objinfoDecoded.X);
     return objEncoded + ";";
 }
 
