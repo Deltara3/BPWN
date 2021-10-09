@@ -33,7 +33,6 @@ function createLevel(spwnCode) {
 }
 
 function bpwn() {
-    console.log("loading BPWN...");
     var scripts = document.scripts;
     var isBPWNCodeFound = false;
     var BPWNElement = undefined;
@@ -45,7 +44,7 @@ function bpwn() {
     }
 
     if(!isBPWNCodeFound) {
-        console.warn("[WARN] BPWN code not found: Did you set the `type` attr of a <script> element to \"text/spwn\"?")
+        console.warn("[WARN] BPWN code not found: Did you set the `type` attr of a <script> element to \"text/spwn\"?");
         alert("BPWN code not found, see console for more information.");
     } else {
         // continue with bpwn-ing
