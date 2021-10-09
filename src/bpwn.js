@@ -30,10 +30,21 @@ function encodeObj(objinfo) {
 function intepret(code) {
     if(code.startsWith("%")) {
         if(code.startsWith("%.alert")) {
+            //var useCode2 = false;
+            //var code2 = "";
+            //if(code.match(/"\);*%./g)) {
+            //    code2 = code.replace(/%.*"\);/, "");
+            //    console.log(code2);
+            //}
+
             if(code.endsWith(");") || code.endsWith(")")) {
                 eval(code.substr(2))
             } else {
                 console.error("no terminator found for %.alert call")
+            }
+
+            if(useCode2) {
+                //
             }
         } else if (code.startsWith("%.log")) {
             if(code.endsWith(");") || code.endsWith(")")) {
