@@ -8,23 +8,23 @@ function encodeObj(objinfo) {
     }
 
     if (objinfoDecoded.OBJ_ID) {
-        objEncoded = objEncoded + "1," + toString(objinfoDecoded.OBJ_ID) + ",";
+        objEncoded = objEncoded + "1," + objinfoDecoded.OBJ_ID.toString() + ",";
     } else {
         objEncoded = objEncoded + "1,1,";
     }
 
     if(objinfoDecoded.X) {
-        objEncoded = objEncoded + "2," + toString(objinfoDecoded.X) + ",";
+        objEncoded = objEncoded + "2," + objinfoDecoded.X.toString() + ",";
     } else {
         objEncoded = objEncoded + "2,0"
     }
 
     if(objinfoDecoded.Y) {
-        objEncoded = objEncoded + "3," + toString(objinfoDecoded.Y) + ",";
+        objEncoded = objEncoded + "3," + objinfoDecoded.Y.toString() + ",";
     } else {
         objEncoded = objEncoded + "3,0"
     }
-    console.log(objinfoDecoded);
+    console.log(objinfoDecoded.X);
     return objEncoded + ";";
 }
 
@@ -45,7 +45,7 @@ function bpwn() {
     }
 
     if(!isBPWNCodeFound) {
-        console.log("[WARN] BPWN code not found: Did you set the `type` attr of a <script> element to \"text/spwn\"?")
+        console.warn("[WARN] BPWN code not found: Did you set the `type` attr of a <script> element to \"text/spwn\"?")
         alert("BPWN code not found, see console for more information.");
     } else {
         // continue with bpwn-ing
