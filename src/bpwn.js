@@ -27,8 +27,34 @@ function encodeObj(objinfo) {
     return objEncoded + ";";
 }
 
-function createLevel(spwnCode) {
-
+function intepret(code) {
+    if(code.startsWith("%")) {
+        if(code.startsWith("%.alert")) {
+            if(code.endsWith(");") || code.endsWith(")")) {
+                eval(code.substr(2))
+            } else {
+                console.error("no terminator found for %.alert call")
+            }
+        } else if (code.startsWith("%.log")) {
+            if(code.endsWith(");") || code.endsWith(")")) {
+                eval("console." + code.substr(2))
+            } else {
+                console.error("no terminator found for %.log call")
+            }
+        } else if (code.startsWith("%.warn")) {
+            if(code.endsWith(");") || code.endsWith(")")) {
+                eval("console." + code.substr(2))
+            } else {
+                console.error("no terminator found for %.warn call")
+            }
+        } else if (code.startsWith("%.error")) {
+            if(code.endsWith(");") || code.endsWith(")")) {
+                eval("console." + code.substr(2))
+            } else {
+                console.error("no terminator found for %.error call")
+            }
+        }
+    }
 }
 
 function bpwn() {
@@ -46,6 +72,10 @@ function bpwn() {
         console.warn("BPWN code not found. Did you set the `type` attr of a <script> element to \"text/spwn\"?");
         alert("BPWN code not found, see console for more information.");
     } else {
-        // continue with bpwn-ing
+        BPWNElement.innerHTML.split("\n").forEach((code) => {
+            code = code.trim();
+            // console.log(code);
+            intepret(code);
+        })
     }
 }
