@@ -5,5 +5,5 @@ Browser [SPWN](https://github.com/Spu7Nix/SPWN-language).
 currently you just put `onload="bpwn()"` and youre gud
 
 ## Current Team
-- [Deltara3](https://github.com/Deltara3)
-- [zTags](https://github.com/zTags)
+- [Deltara3](https://github.com/Deltara3) - SPWN libraries (soon)
+- [zTags](https://github.com/zTags) - JavaScript
